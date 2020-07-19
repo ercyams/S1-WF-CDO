@@ -17,9 +17,11 @@ public class PeakDischarge : MonoBehaviour
 		float coefficient = float.Parse(Coefficient.text);
 		float intensity = float.Parse(Intensity.text);
 		float area = float.Parse(Area.text);
-		float result = 0;
+		float result = 0.0f;
+		double convertFloat = 0.0f;
 
 		result = coefficient * intensity * area;
-		Discharge.text = result.ToString("####0.00") + " ft3/s (cfs)"; 
+		convertFloat = result* 101.9406;
+		Discharge.text = convertFloat.ToString("####0.00") + " m3/s"; 
 	}
 }

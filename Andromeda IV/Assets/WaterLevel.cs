@@ -58,7 +58,7 @@ public class WaterLevel : MonoBehaviour {
 			Debug.Log(flowOverTime);
 			Debug.Log(convertFlow);
 			
-			Result.text = convertFlow.ToString("####0.00") + " cms";
+			Result.text = convertFlow.ToString("####0.00") + " m3/s";
 
 
 			// Alarm Status and Level

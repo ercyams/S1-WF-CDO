@@ -58,9 +58,9 @@ public class Graph : MonoBehaviour{
 		double sumOfSquaresOfDifferences = normalFlow.Select(val => (val - average) * (val - average)).Sum();
 		double sd = Math.Sqrt(sumOfSquaresOfDifferences / normalFlow.Length); 
 
-		Mean.text = average.ToString("####0.00") + " cu.m./sec.";
-		Mode.text = mode.ToString("####0.00") + " cu.m./sec.";
-		StandardDeviation.text = sd.ToString("####0.00") + " cu.m./sec.";
+		Mean.text = average.ToString("####0.00") + " m3/s";
+		Mode.text = mode.ToString("####0.00") + " m3/s";
+		StandardDeviation.text = sd.ToString("####0.00") + " m3/s";
 
 		Debug.Log("average: " + average);
 		Debug.Log("sumOfSquaresOfDifferences: " + sumOfSquaresOfDifferences);
@@ -117,7 +117,7 @@ public class Graph : MonoBehaviour{
 			labelY.gameObject.SetActive(true);
 			float normalizedValue = i * 1f / separatorCount;
 			labelY.anchoredPosition = new Vector2(-5f, normalizedValue * graphHeight);
-			labelY.GetComponent<Text>().text = Mathf.RoundToInt(normalizedValue * yMaximum).ToString();
+			labelY.GetComponent<Text>().text = Mathf.RoundToInt(normalizedValue * yMaximum).ToString() + " m3/s";
 
 			RectTransform dashY = Instantiate(dashTemplateY);
             dashY.SetParent(graphContainer, false);
